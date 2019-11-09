@@ -16,9 +16,23 @@ class List extends Component {
   render() {
     return (
       
-      <div>
-        
-      </div>
+      
+         <div>
+                <h3>This is the movielist. Happy happy movie list</h3>
+                <ul>
+                    {this.props.movies.map((movie) => {
+                        return (
+                            <li key={movie.id}>
+                                <h1>{movie.title}</h1>
+                                <span> {movie.description}</span>
+                                
+                            </li>
+                        );
+                    })}
+                </ul>
+                <pre>{JSON.stringify(this.props.reduxState)}</pre>
+            </div>
+      
     );
   }
 }
