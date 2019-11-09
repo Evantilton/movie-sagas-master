@@ -23,6 +23,7 @@ class List extends Component {
                     {this.props.movies.map((movie) => {
                         return (
                             <li key={movie.id}>
+                                <image>{movie.poster}</image>
                                 <h1>{movie.title}</h1>
                                 <span> {movie.description}</span>
                                 
