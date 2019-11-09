@@ -5,6 +5,7 @@ import {connect} from 'react-redux';
 
 class Details extends Component {
 
+
     backToList =() => this.props.history.push('/')
     edit =() => this.props.history.push('/edit')
 
@@ -12,6 +13,13 @@ class Details extends Component {
     return (
       
       <div>
+         <>
+              <div>
+              <h1>{this.props.storedMovie.title}</h1>
+              <p>{this.props.storedMovie.description}</p>
+                  <pre>{JSON.stringify(this.props.reduxState)}</pre>
+              </div>
+          </>
         <footer>
         <button onClick={this.backToList}>Back to List</button>
         
