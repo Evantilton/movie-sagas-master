@@ -3,18 +3,11 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 
-// material-ui
 
-import Card from '@material-ui/core/Card';
 
-import CardMedia from '@material-ui/core/CardMedia';
-
-import CardHeader from '@material-ui/core/CardHeader';
 
 
 class List extends Component {
-
-
 
     componentDidMount() {
         this.getMovies();
@@ -42,29 +35,33 @@ class List extends Component {
         return (
 
             <>
-
+           
                 {this.props.movies.map((movie) => {
                     return (
                         <>
-                            <Card id={movie.name}>
-                                <CardMedia>
+                            <card  id={movie.name}>
+                                <media >
                                     <img alt={movie.name} src={movie.poster} onClick={() => this.clickMovie(movie)} />
-                                </CardMedia>
+                                </media>
 
 
-                                <CardHeader
+                                <card
+                                
                                     title={movie.title}
                                     subheader={movie.description}
                                 />
 
-                            </Card>
+                            </card>
+                            
                         </>
                     );
                 })}
 
                 <pre>{JSON.stringify(this.props.reduxState)}</pre>
-
+                
+                
             </>
+
         );
     }
 }
