@@ -33,8 +33,10 @@ function* editMovies(action) {
 //     yield Axios.put(`/anime/character/tag/${action.payload.characterId}`, 
 // action.payload);
     {const movieResponse = yield axios.put(`/movies`, action.payload);
-    yield put({ type: 'SET_MOVIES', payload: movieResponse.data });
+    console.log("back from movieResponse Put",movieResponse.data);
+    // yield put({ type: 'SET_MOVIES', payload: movieResponse.data });
      console.log('editMovies was hit with an action', action);
+     
     } catch(error){
         console.log('error editing movies', error);
     }
