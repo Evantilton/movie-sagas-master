@@ -16,6 +16,7 @@ state = {
 saveThis = (event) => {
     console.log("saving");
     this.props.dispatch({ type: 'EDIT_MOVIES', payload: this.state})
+    this.props.dispatch({ type: 'STORED_MOVIE', payload: this.state.edited})
     this.backToDetails();
 }
 
