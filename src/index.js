@@ -27,13 +27,26 @@ function* getMovies(action) {
   }
   //End GET SAGA
 
+//PUT SAGA
+function* editMovies(action) {
+    try
+//     yield Axios.put(`/anime/character/tag/${action.payload.characterId}`, 
+// action.payload);
+    {const movieResponse = yield axios.put(`/movies/${action.payload.id}`, action.payload);
+    yield put({ type: 'SET_MOVIES', payload: movieResponse.data });
+     console.log('editMovies was hit with an action', action);
+    } catch(error){
+        console.log('error editing movies', error);
+    }
+  }
+  //End PUT SAGA
 
   // Create the rootSaga generator function
 function* rootSaga() {
 
     yield takeEvery('GET_MOVIES', getMovies);
-   // yield takeEvery('GET_BASKET', getBasket);
-    //postPlants
+   yield takeEvery('EDIT_MOVIES', editMovies);
+   
     
     }
 
