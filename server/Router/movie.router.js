@@ -27,7 +27,7 @@ const values = [title,description, id];
 pool.query(queryText, values)
     .then((result) => { res.send(result.rows); })
     .catch((err) => {
-      console.log('Error completing SELECT movie query', err);
+      console.log('Error completing EDIT movie query', err);
       res.sendStatus(500);
     });
 });

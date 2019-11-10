@@ -3,7 +3,18 @@ import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 
+// material-ui
+
+import Card from '@material-ui/core/Card';
+
+import CardMedia from '@material-ui/core/CardMedia';
+
+import CardHeader from '@material-ui/core/CardHeader';
+
+
 class List extends Component {
+
+
 
     componentDidMount() {
         this.getMovies();
@@ -14,42 +25,45 @@ class List extends Component {
     }
 
     clickMovie(movie) {
-        
-        this.props.dispatch({ type: 'STORED_MOVIE', payload: movie})
+
+        this.props.dispatch({ type: 'STORED_MOVIE', payload: movie })
         console.log("storing this movie for view", movie);
         this.goToDetails();
     }
-        
 
-    goToDetails =() =>  {
+
+    goToDetails = () => {
         this.props.history.push('/details')
     }
 
     render() {
-        
-        
+
+
         return (
 
             <>
-                <div>
-                    <h3>This is the movielist. Happy happy movie list</h3>
-                    <div>
-                        {this.props.movies.map((movie) => {
-                            return (
-                                <>
 
-                                    {/* <div key={movie.id} onClick={()=> this.clickMovie(movie)}> */}
-                                        <img alt={movie.name} src={movie.poster} onClick={()=> this.clickMovie(movie)}/>
-                                        <h1>{movie.title}</h1>
-                                        <span> {movie.description}</span>
+                {this.props.movies.map((movie) => {
+                    return (
+                        <>
+                            <Card id={movie.name}>
+                                <CardMedia>
+                                    <img alt={movie.name} src={movie.poster} onClick={() => this.clickMovie(movie)} />
+                                </CardMedia>
 
-                                    {/* </div> */}
-                                </>
-                            );
-                        })}
-                    </div>
-                    <pre>{JSON.stringify(this.props.reduxState)}</pre>
-                </div>
+
+                                <CardHeader
+                                    title={movie.title}
+                                    subheader={movie.description}
+                                />
+
+                            </Card>
+                        </>
+                    );
+                })}
+
+                <pre>{JSON.stringify(this.props.reduxState)}</pre>
+
             </>
         );
     }

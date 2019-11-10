@@ -1,7 +1,15 @@
 import React, { Component } from 'react';
 //import axios from 'axios';
-
 import {connect} from 'react-redux';
+
+//material-ui
+
+import Card from '@material-ui/core/Card';
+import CardHeader from '@material-ui/core/CardHeader';
+
+
+  
+
 
 class Details extends Component {
 
@@ -14,11 +22,12 @@ class Details extends Component {
       
       <div>
          <>
-              <div>
-              <h1>{this.props.storedMovie.title}</h1>
-              <p>{this.props.storedMovie.description}</p>
-                  <pre>{JSON.stringify(this.props.reduxState)}</pre>
-              </div>
+         <Card>
+      <CardHeader
+        title={this.props.storedMovie.title}
+        subheader={this.props.storedMovie.description}
+      />
+      </Card>
           </>
         <footer>
         <button onClick={this.backToList}>Back to List</button>
