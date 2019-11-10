@@ -2,11 +2,7 @@ import React, { Component } from 'react';
 //import axios from 'axios';
 
 import { connect } from 'react-redux';
-
-
-
-
-
+import Card from 'react-bootstrap/Card';
 class List extends Component {
 
     componentDidMount() {
@@ -35,39 +31,32 @@ class List extends Component {
         return (
 
             <>
-           
+
                 {this.props.movies.map((movie) => {
                     return (
                         <>
-                            <card  id={movie.name}>
-                                <media >
-                                    <img alt={movie.name} src={movie.poster} onClick={() => this.clickMovie(movie)} />
-                                </media>
+                            <Card class="card" id={movie.name}>
+                                <img img alt={movie.name} src={movie.poster} onClick={() => this.clickMovie(movie)} />
 
-
-                                <card
-                                
-                                    title={movie.title}
-                                    subheader={movie.description}
-                                />
-
-                            </card>
+                                <h1 text='white'>{movie.title}</h1>
+                                <p text='white'>{movie.description}</p>
+                            </Card>
                             
                         </>
-                    );
-                })}
-
+                            );
+                        })}
+        
                 <pre>{JSON.stringify(this.props.reduxState)}</pre>
-                
-                
-            </>
 
-        );
-    }
+
+                        </>
+
+                    );
+                }
 }
 
-const mapReduxStateToProps = (reduxState) => {
+                const mapReduxStateToProps = (reduxState) => {
     return reduxState;
-}
-
+            }
+            
 export default connect(mapReduxStateToProps)(List);

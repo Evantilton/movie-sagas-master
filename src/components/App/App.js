@@ -16,29 +16,29 @@ import ReactRain from 'react-rain-animation';
 
 // import all the styles
 import "react-rain-animation/lib/style.css";
+import { isUserWhitespacable } from '@babel/types';
 
 
 const styles = theme => ({
 	"@global": {
 		body: {
 			backgroundImage: "url('/images/background.jpg')", 
-      backgroundRepeat: "no-repeat",
-			backgroundPosition: "center center",
-			backgroundSize: "800px",
+      backgroundRepeat: "repeat",
+			backgroundPosition: "center",
+			backgroundSize: "1000px 1100px",
       backgroundAttachment: "fixed",
       backgroundColor: "black",
-			height: "100%"
+			height: "%"
     },
     header: {
       backgroundColor: "transparent"
     },
 		html: {
-			height: "100%"
-		},
-    card: {
-        Width: "500px",
-      
-		},
+			height: "100%",
+    },
+    h1: {
+      textColor: "white",
+    }
 	}
 });
 class App extends Component {
