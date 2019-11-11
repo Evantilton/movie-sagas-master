@@ -17,51 +17,52 @@ import axios from 'axios';
 
 //GET SAGA
 function* getMovies(action) {
+    try {
+        const movieResponse = yield axios.get('/movies');
+        yield put({ type: 'SET_MOVIES', payload: movieResponse.data });
+        console.log('getMovies was hit with an action', action);
+    } catch (error) {
+        console.log('error fetching movies', error);
+    }
+}
+//End GET SAGA
+
+//Get Genres
+function* getGenres(action) {
     try
-    {const movieResponse = yield axios.get('/movies');
-    yield put({ type: 'SET_MOVIES', payload: movieResponse.data });
-     console.log('getMovies was hit with an action', action);
+    {const movieResponse = yield axios.get('/movies/genres');
+    yield put({ type: 'SET_GENRES', payload: movieResponse.data });
+     console.log('getGenres was hit with an action', action);
     } catch(error){
         console.log('error fetching movies', error);
     }
   }
-  //End GET SAGA
-
-//Get Genres
-// function* getGenres(action) {
-//     try
-//     {const movieResponse = yield axios.get('/movies/genres');
-//     yield put({ type: 'SET_GENRES', payload: movieResponse.data });
-//      console.log('getGenres was hit with an action', action);
-//     } catch(error){
-//         console.log('error fetching movies', error);
-//     }
-//   }
 //Get Genras Saga
 
 //PUT SAGA
 function* editMovies(action) {
     try
-//     yield Axios.put(`/anime/character/tag/${action.payload.characterId}`, 
-// action.payload);
-    {const movieResponse = yield axios.put(`/movies`, action.payload);
-    console.log("back from movieResponse Put",movieResponse.data);
-     console.log('editMovies was hit with an action', action);
+    //     yield Axios.put(`/anime/character/tag/${action.payload.characterId}`, 
+    // action.payload);
+    {
+        const movieResponse = yield axios.put(`/movies`, action.payload);
+        console.log("back from movieResponse Put", movieResponse.data);
+        console.log('editMovies was hit with an action', action);
 
-    } catch(error){
+    } catch (error) {
         console.log('error editing movies', error);
     }
-  }
-  //End PUT SAGA
+}
+//End PUT SAGA
 
-  // Create the rootSaga generator function
+// Create the rootSaga generator function
 function* rootSaga() {
 
     yield takeEvery('GET_MOVIES', getMovies);
-   yield takeEvery('EDIT_MOVIES', editMovies);
-//    yield takeEvery('GET_GENRES', getGenres);
-    
-    }
+    yield takeEvery('EDIT_MOVIES', editMovies);
+    yield takeEvery('GET_GENRES', getGenres);
+
+}
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
@@ -112,6 +113,6 @@ const storeInstance = createStore(
 // Pass rootSaga into our sagaMiddleware
 sagaMiddleware.run(rootSaga);
 
-ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, 
+ReactDOM.render(<Provider store={storeInstance}><App /></Provider>,
     document.getElementById('root'));
 registerServiceWorker();

@@ -21,7 +21,7 @@ router.get('/genres', (req, res) => {
   pool.query(queryText)
     .then((result) => { res.send(result.rows); })
     .catch((err) => {
-      console.log('Error completing SELECT movie query', err);
+      console.log('Error completing SELECT GENRE query', err);
       res.sendStatus(500);
     });
 });

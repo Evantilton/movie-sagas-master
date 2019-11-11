@@ -12,7 +12,7 @@ class List extends Component {
 
     getMovies() {
         this.props.dispatch({ type: 'GET_MOVIES' });
-        // this.props.dispatch({type: 'GET_GENRES' })
+        this.props.dispatch({type: 'GET_GENRES' });
     }
 
     clickMovie(movie) {
