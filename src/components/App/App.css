@@ -8,7 +8,7 @@
   height: 150px;
   padding: 20px;
   color: white;
-  text-shadow: 2px 2px black;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
  
 }
 
