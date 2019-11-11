@@ -49,7 +49,7 @@ class List extends Component {
                             );
                         })}
         
-                <pre>{JSON.stringify(this.props.reduxState)}</pre>
+                
 
 
                         </>

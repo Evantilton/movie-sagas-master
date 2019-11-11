@@ -25,7 +25,14 @@ class Details extends Component {
           <Card>
             <Card.Body>
               <Card.Title>{this.props.storedMovie.title}</Card.Title>
+              {this.props.genres.map((genre) => {
+                if (genre.id === this.props.storedMovie.id) {
+                  return <Card.Text>{genre.name}</Card.Text>
+                }
+              })}
+              
               <Card.Text>{this.props.storedMovie.description}  </Card.Text>
+
             </Card.Body>
 
           </Card>

@@ -27,17 +27,17 @@ router.get('/genres', (req, res) => {
 });
 
 router.put('/', (req, res) => {
-  let title=req.body.edited.title
-  let description=req.body.edited.description
-  let id=req.body.edited.id
-  
-  const queryText = 
-  `UPDATE "movies" 
-SET "title"=$1,
- "description"=$2 
- WHERE "id"=$3`;
-const values = [title,description, id];
-pool.query(queryText, values)
+  let title = req.body.edited.title
+  let description = req.body.edited.description
+  let id = req.body.edited.id
+
+  const queryText =
+    `UPDATE "movies" 
+      SET "title"=$1,
+      "description"=$2 
+    WHERE "id"=$3`;
+  const values = [title, description, id];
+  pool.query(queryText, values)
     .then((result) => { res.send(result.rows); })
     .catch((err) => {
       console.log('Error completing EDIT movie query', err);
@@ -46,7 +46,7 @@ pool.query(queryText, values)
 });
 
 
- 
- 
+
+
 
 module.exports = router;
