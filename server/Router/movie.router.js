@@ -45,20 +45,7 @@ pool.query(queryText, values)
     });
 });
 
-// router.put('/character/tag/:id', (req, res) => {
-//   let characterId = req.params.id;
-//   let tagId = req.body.tag_id;
-//   const sqlText = 'UPDATE "character" SET "tag_id"=$1 WHERE character.id=$2;'
-//   const values = [tagId, characterId];
-//   pool.query(sqlText, values)
-//     .then( (response) => {
-//       res.sendStatus(200);
-//     })
-//     .catch( (error) => {
-//       console.log(`Error updating tag`, error);
-//       res.sendStatus(500);
-//     })
-//  })
+
  
  
 

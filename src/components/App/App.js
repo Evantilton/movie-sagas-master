@@ -6,7 +6,7 @@ import { HashRouter as Router, Route, Link} from 'react-router-dom';
 import List from './../List/List'
 import Details from './../Details/Details'
 import Edit from './../Edit/Edit'
-import Test from '../Test/Test'
+
 
 import CssBaseline from "@material-ui/core/CssBaseline";
 import { withStyles } from "@material-ui/core/styles";
@@ -61,7 +61,7 @@ class App extends Component {
           <Route exact path="/" component={List}/>
           <Route exact path="/Details" component={Details}/>
           <Route exact path="/Edit" component={Edit}/>
-          <Route exact path="/Test" component={Test}/>
+          
         </div>
       </Router>
       </>
