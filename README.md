@@ -1,9 +1,26 @@
-# Project Name
+# REDUX-FEEDBACK-LOOP
+## Duration: Weekend
+This application shows a number of movies for the user to peruse on a rainy day.  It shows the image, title, description of each movie.  It also also the user to click on the image to select just one movie and additionally see it's title, genres, and description.  This page also has a button that allows the user to edit the title and description.
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+To see the fully functional site, please visit: https://github.com/Evantilton/redux-feedback-loop
+## Screenshot 
+![](public/images/Screenshot.jpg)
 
-## Description
+## Installation
+fork and clone the repo 
+npm install 
+create the database 
+npm run server npm 
+run client
 
-Your project description goes here. What problem did you solve? How did you solve it?
+## Usage
+Follow the steps on each page to submit your comments!
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/github-finalization-assignment).
+## Built With
+react react-redux html jsx css bootstrap react-rain-animation
+
+## License
+MIT
+
+## Support
+If you have suggestions or issues, please email me at Evantilton@gmail.com

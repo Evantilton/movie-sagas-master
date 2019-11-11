@@ -47,9 +47,7 @@ saveThis = (event) => {
         <button onClick={this.backToDetails}>cancel</button>
         <button onClick={this.saveThis}>save</button>
         </footer>
-        <div>
-                    <pre>{JSON.stringify(this.state)}</pre>
-                </div>
+        
                 
       </div>
       </>
