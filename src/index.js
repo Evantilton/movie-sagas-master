@@ -27,6 +27,18 @@ function* getMovies(action) {
   }
   //End GET SAGA
 
+//Get Genres
+function* getGenres(action) {
+    try
+    {const movieResponse = yield axios.get('/movies');
+    yield put({ type: 'SET_GENRES', payload: movieResponse.data });
+     console.log('getGenres was hit with an action', action);
+    } catch(error){
+        console.log('error fetching movies', error);
+    }
+  }
+//Get Genras Saga
+
 //PUT SAGA
 function* editMovies(action) {
     try
@@ -47,7 +59,7 @@ function* rootSaga() {
 
     yield takeEvery('GET_MOVIES', getMovies);
    yield takeEvery('EDIT_MOVIES', editMovies);
-   
+   yield takeEvery('GET_GENRES', getGenres);
     
     }
 

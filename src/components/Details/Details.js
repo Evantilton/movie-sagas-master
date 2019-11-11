@@ -1,44 +1,46 @@
 import React, { Component } from 'react';
 //import axios from 'axios';
-import {connect} from 'react-redux';
-
+import { connect } from 'react-redux';
+import Card from 'react-bootstrap/Card';
 
 class Details extends Component {
 
   componentDidMount() {
     this.getMovies();
-}
+  }
 
-getMovies() {
+  getMovies() {
     this.props.dispatch({ type: 'GET_MOVIES' });
-}
+  }
 
-    backToList =() => this.props.history.push('/')
-    edit =() => this.props.history.push('/edit')
+  backToList = () => this.props.history.push('/')
+  edit = () => this.props.history.push('/edit')
 
   render() {
     return (
-      
+
       <div>
-         <>
-         <card>
-      <header
-        title={this.props.storedMovie.title}
-        subheader={this.props.storedMovie.description}
-      />
-      </card>
-          </>
+        <>
+
+          <Card>
+            <Card.Body>
+              <Card.Title>{this.props.storedMovie.title}</Card.Title>
+              <Card.Text>{this.props.storedMovie.description}  </Card.Text>
+            </Card.Body>
+
+          </Card>
+        </>
         <footer>
-        <button onClick={this.backToList}>Back to List</button>
-        
-        <button onClick={this.edit}>Edit</button>
+          <button onClick={this.backToList}>Back to List</button>
+
+          <button onClick={this.edit}>Edit</button>
         </footer>
       </div>
     );
   }
 }
 
-const mapReduxStateToProps=(reduxState)=>{
+const mapReduxStateToProps = (reduxState) => {
   return reduxState;
 }
 
