@@ -12,7 +12,7 @@ class List extends Component {
 
     getMovies() {
         this.props.dispatch({ type: 'GET_MOVIES' });
-        this.props.dispatch({type: 'GET_GENRES' })
+        // this.props.dispatch({type: 'GET_GENRES' })
     }
 
     clickMovie(movie) {
@@ -37,7 +37,7 @@ class List extends Component {
                 {this.props.movies.map((movie) => {
                     return (
                         <>
-                            <Card  id={movie.name}>
+                            <Card class="card" id={movie.name}>
                                 <Card.Img alt={movie.name} variant="top" src={movie.poster} onClick={() => this.clickMovie(movie)} />
                                 <Card.Body>
                                 <Card.Title >{movie.title}</Card.Title>
