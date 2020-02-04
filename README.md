@@ -2,7 +2,7 @@
 ## Duration: Weekend
 This application shows a number of movies for the user to peruse on a rainy day.  It shows the image, title, and description of each movie.  It also allows the user to click on the image to select just one movie and additionally see it's title, genres, and description.  This page also has a button that allows the user to edit the title and description.
 
-To see the fully functional site, please visit: https://github.com/Evantilton/movie-sagas-master
+This application displays movies from a database querying the server for movie details, matching them to a genre table to display genres and allowing users to edit the information on the page.
 
 ## Screenshot 
 ![](public/images/Screenshot.jpg)
