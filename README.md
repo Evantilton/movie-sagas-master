@@ -4,9 +4,6 @@ This application shows a number of movies for the user to peruse on a rainy day.
 
 This application displays movies from a database querying the server for movie details, matching them to a genre table to display genres and allowing users to edit the information on the page.
 
-## Screenshot 
-![](public/images/Screenshot.jpg)
-
 ## Installation
 
 1. Run git clone http://... to fork and clone from this repository.
