@@ -13,7 +13,7 @@ This application displays movies from a database querying the server for movie d
 3. Use the database.sql file to create a postgreSQL database on your machine. If you need to point this to a different folder look in the feedback.router.js.
 
 4. Database is called saga_movies_weekend.
-CREATE TABLE instructions included for movies,genres, and junction movies_genres.
+CREATE TABLE instructions included for movies, genres, and junction movies_genres.
 
 5. Run npm run server to start the server.
 
