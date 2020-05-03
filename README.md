@@ -17,7 +17,7 @@ CREATE TABLE instructions included for movies, genres, and junction movies_genre
 
 5. Run npm run server to start the server.
 
-6. Then run npm run client to start the client. React will open up a browser when the project loads.
+6. Then run in terminal the command "npm run client" to start the client. React will open up a browser when the project loads.
 
 
 ## Usage
